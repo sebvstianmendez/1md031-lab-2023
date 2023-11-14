@@ -1,21 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en">
    <header>
+    <link rel="stylesheet" type="text/css" href="style.css">
        <title>MZ Luxury Cars</title>
        <meta charset="utf-8"/>
    </header>
    <body>
    
     <main>
-        <section>
-            <h1><center>MZ Luxury Cars</center></h1>
-            <img src="porsche1.png" width="1600" height="1000" alt="Porsche 911" title="Porsche 911">
+        <section id="sectionone">
+            <h1 id="headline" >MZ Luxury Cars</h1>
+            <img src="Taycan.jpeg" id="mainbg" alt="Porsche 911" title="Porsche 911">
         </section>
 
-        <section>
+        <section id="sectiontwo">
             <h2><center>Welcome to MZ Luxury Cars</center></h2>
             <p><center>Please choose your automobile</center></p>
-            <div style="display: inline-block;">
+            <div class="wrapper">
+                <div class="box a">
+                
+                
             <h3>The all new 2024 Koenigsegg One 1</h3>
 
             <img src="koenigsegg.png" alt="koenigsegg One 1" width="700" height="400" title="Koenigsegg One 1">
@@ -27,32 +31,35 @@
                 <li>0 - 100, 2.6 seconds</li>
             </ul>
             </div>
-            <div style="display: inline-block;">
+            <div class="box b">
             <h3>The 2024 Porsche GT4RS</h3>
            
             <img src="poss.png" alt="Porsche GT4RS" width="600" height="400" title="Porsche GT4RS">
 
             <ul>
                 <li>493 hp</li>
-                <li>1 415 kg Curb Weight</li>
+                <li class="obs">Gasoline</li>
                 <li>6 cyl. Boxter engine</li>
                 <li>0 - 100, 3.4 seconds</li>
             </ul>
             </div>
 
-            <div style="display: inline-block;">
+            <div class="box c">
                 <h3>The 2019 Ferrari LaFerrari</h3>
     
                 <img src="ferre.png" alt="Ferrari LaFerrari" width="450" height="400" title="Ferrari LaFerrari">
     
                 <ul>
                     <li>950 hp</li>
-                    <li>1 585 kg Curb Weight</li>
+                    <li class="obs">Gasoline</li>
                     <li>6.3 L F140  FEV12 engine</li>
                     <li>0 - 100, 2.6 seconds</li>
                 </ul>
+                
             </div>
-       
+        </section>
+
+        <section id="sectionthree">
             <h2>Customer Information</h2>
             <p>This is where you provide neccessary information</p>
             <h3>Delivery information:</h3>
@@ -100,7 +107,7 @@
             </form>
         </section>
 
-        <button type="submit">
+        <button class="buttonone" type="submit">
             <img src="check.png" width="21" height="21">
             Send Info
           </button>
