@@ -1,0 +1,25 @@
+[
+    {
+      "name": "Ferrari 458 Italia",
+      "horsepower": 828,
+      "category": "Supercar",
+      "electric": false,
+      "img": "ferre.png"
+    }
+    ,
+    {
+        "name": "Porsche GT4RS",
+        "horsepower": 639,
+        "category": "Daily-driver",
+        "electric": false,
+        "img": "poss.png"
+      }
+      ,
+      {
+        "name": "Koenigsegg Stradale",
+        "horsepower": 999,
+        "category": "Eco-friendly",
+        "electric": true, 
+        "img": "koenigsegg.png"
+      }
+  ]

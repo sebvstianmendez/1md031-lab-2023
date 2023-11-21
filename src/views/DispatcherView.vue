@@ -1,18 +1,47 @@
 <template>
+  <!-- Kommentera med command shift 7  -->
+  <section class="dispatchStyle">
     <div id="orders">
       <div id="orderList">
-        <div v-for="(order, key) in orders" v-bind:key="'order'+key">
-          #{{ key }}: {{ order.orderItems.join(", ") }}
+      <dic v-for="(order, index) in orders" :key="index">
+      <section id="aCustomerOrder">
+
+            # {{ order.orderId }}: {{ getName(order) }}
+            <section v-for="(item, amount) in order.orderItems" :key="amount">
+              {{ amount }}: {{ item }}
+            </section>
+
+          <section>{{ remainingInfo(order) }}</section>
+          <hr class="smaller" />
+        </section>
+       </dic>
+
+      <button class="clearButton" v-on:click="clearQueue">Clear Queue</button>
+    </div>
+    <div
+        id="dots"
+        v-bind:style="{
+          background: 'url(' + require('../../public/img/polacks.jpg') + ')',
+        }"
+      >
+        <div
+          v-for="(order, key) in orders"
+          v-bind:style="{
+            left: order.details.x + 'px',
+            top: order.details.y + 'px',
+          }"
+          v-bind:key="'dots' + key"
+        >
+          {{ key }}
         </div>
-        <button v-on:click="clearQueue">Clear Queue</button>
-      </div>
-      <div id="dots" v-bind:style="{ background: 'url(' + require('../../public/img/polacks.jpg')+ ')' }">
-          <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}" v-bind:key="'dots' + key">
-            {{ key }}
-          </div>
       </div>
     </div>
-  </template>
+  </section>
+</template>
+
+
+
+
   <script>
   import io from 'socket.io-client'
   const socket = io();
@@ -31,10 +60,22 @@
     methods: {
       clearQueue: function () {
         socket.emit('clearQueue');
-      }
+      },
+      getName: function (order) {
+      return order.givenInfo[0];
+    },
+    remainingInfo: function (order) {
+      return order.givenInfo.splice(1, 3).join(",  ");
+    },
     }
   }
   </script>
+
+
+
+
+
+
   <style>
   #orderList {
     top:1em;
