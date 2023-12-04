@@ -2,18 +2,19 @@
 
      <div class="box a">
      
-    <img v-bind:src="burger.url" :title="burger.name" :alt="burger.name" />
-    <h1 class="name"> {{burger.name}} </h1>
+    <img v-bind:src="car.img" :title="car.name" :alt="car.name" />
+    <h1 class="name"> {{car.name}} </h1>
     <div class="Specifications">
       <ul>
-        <li>{{burger.price}}</li>
-        <li>{{burger.category}}</li>
-        <li>{{burger.electric}}</li>
+        <li>Horsepower: {{car.horsepower}}</li>
+        <li>{{car.price}}</li>
+        <li>{{car.category}}</li>
+        <li>{{is_Electric(car.electric) }}</li>
       </ul>
     </div>
     <section class="Buttons">
-      <button v-on:click="increase">+</button>
-      <button v-on:click="decrease">-</button>
+      <button v-on:click="increase">Add to basket</button>
+      <button v-on:click="decrease">Remove from basket</button>
       <p class="amount" v-if="amountOrdered">Amount: {{amountOrdered}} </p>
     </section>
     </div>
@@ -23,15 +24,41 @@
   export default {
     name: 'OneBurger',
     props: {
-      burger: Object
+      car: Object
     },
-    data: function () {
-  return {
-    amountOrdered: 0,
-  }
-},
-  }
+    data() {
+      return {
+        amountOrdered: 0,
+      };
+    },
+    methods: {
+      
+      is_Electric(electric) {
+        if (electric) return "Electric";
+        else return "Combustion";
+    },
+
+   
+      increase() {
+        this.amountOrdered++;
+        this.$emit("orderedCar", {
+          name: this.car.name,
+          amount: this.amountOrdered,
+        });
+      },
+      decrease() {
+        if (this.amountOrdered > 0) {
+          this.amountOrdered--;
+          this.$emit("orderedCar", {
+            name: this.car.name,
+            amount: this.amountOrdered,
+          });
+        }
+      },
+    },
+  };
   </script>
+  
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>

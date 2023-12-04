@@ -1,5 +1,4 @@
 <template>
-  <!-- Kommentera med command shift 7  -->
   <section class="dispatchStyle">
     <div id="orders">
       <div id="orderList">
@@ -21,7 +20,7 @@
     <div
         id="dots"
         v-bind:style="{
-          background: 'url(' + require('../../public/img/polacks.jpg') + ')',
+          background: 'url(' + require('/public/img/polacks.jpg') + ')',
         }"
       >
         <div
@@ -38,7 +37,6 @@
     </div>
   </section>
 </template>
-
 
 
 
@@ -78,32 +76,36 @@
 
   <style>
   #orderList {
+    z-index: 2;
     top:1em;
     left:1em;
     position: absolute;
-    z-index: 2;
     color:black;
-    background: rgba(255,255,255, 0.5);
     padding: 1em;
+    background: rgba(255,255,255, 0.5);
   }
+
   #dots {
     position: relative;
-    margin: 0;
-    padding: 0;
-    background-repeat: no-repeat;
-    width:1920px;
-    height: 1078px;
     cursor: crosshair;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    height: 1078px;
+    width:1920px;
   }
   
+
   #dots div {
-    position: absolute;
-    background: black;
     color: white;
-    border-radius: 10px;
     width:20px;
     height:20px;
     text-align: center;
+    position: absolute;
+    background: black;
+    
+    border-radius: 10px;
+    
   }
   </style>
   

@@ -1,25 +1,29 @@
 [
     {
-      "name": "Ferrari 458 Italia",
+      "name": "Porsche 911 Carrera Turbo",
       "horsepower": 828,
       "category": "Supercar",
       "electric": false,
-      "img": "ferre.png"
+      "img": "911 carrera t.jpeg",
+      "price": "3 229 999 SEK"
+      
     }
     ,
     {
-        "name": "Porsche GT4RS",
+        "name": "Porsche 911 Carrera Cabriolet",
         "horsepower": 639,
         "category": "Daily-driver",
         "electric": false,
-        "img": "poss.png"
+        "img": "911 carrera cab.jpeg",
+        "price": "2 999 999 SEK"
       }
       ,
       {
-        "name": "Koenigsegg Stradale",
+        "name": "Porsche 911 Carrera",
         "horsepower": 999,
         "category": "Eco-friendly",
         "electric": true, 
-        "img": "koenigsegg.png"
+        "img": "911 carrera.jpeg",
+        "price": "2 559 999 SEK"
       }
   ]
